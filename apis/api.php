@@ -6,11 +6,11 @@ if (isset($_POST['access'])) {
 		?>
 		<div class="col-sm-8 mx-auto">
                 <p class="bd-content-title h2 text-center">STATUS SERVER</p>
-                <p class="text-center">Địa chỉ IP: <?=$domain?> Lỗi! Thông tin không hợp lệ.</p>
+                <p class="text-center">Địa chỉ IP: <?=$domain?> không hợp lệ</p>
             </div>
 		<?php 
 	} else {
-		// API của mcsrvstat.us
+		//API của mcsrvstat.us.
 		$get_api = json_decode(file_get_contents("https://api.mcsrvstat.us/2/$domain"));
 		if (!$get_api) {?>
 			<div class="row">
@@ -26,7 +26,7 @@ if (isset($_POST['access'])) {
 			<div class="row">
 			<div class="col-xl-5 mx-auto">
                 <p class="bd-content-title h2 text-center">STATUS SERVER</p>
-                <p class="text-center">Địa chỉ IP: <?=$domain?> Lỗi! Thông tin không hợp lệ.</p>
+                <p class="text-center">Địa chỉ IP: <?=$domain?> đang Offline hoặc không tìm thấy !</p>
             </div>
         </div>
             <?php
@@ -81,14 +81,14 @@ if (isset($_POST['access'])) {
                 <p class="bd-content-title h2 text-center">THÔNG TIN </p>
                 <p class="text-center">Địa chỉ Tên miền: <?=$domain?></p>
                 <p class="fw-bold">MOTD:</p>
-                <p class="motd"><?=$motd?><br><?=$motd1?></p>
+                <p class="ske-motd"><?=$motd?><br><?=$motd1?></p>
                 <p >Người chơi trực tuyến: <span class="fw-bold"><?=$player?>/<?=$player_max?></span></p>
                 <p >Phiên bản: <span class="fw-bold"><?=$version?></span></p>
                 <p >MOD: <span class="fw-bold"><?=$mods_list?></span></p>
             </div>
             <div class="col-xl-6">
                 <p class="bd-content-title h2 text-center">NÂNG CAO </p>
-                <p class="text-center">IP: <?=$ip?></p>
+                <p class="text-center">Địa chỉ IP: <?=$ip?></p>
                 <p >Cổng: <?=$port?></p>
                 <p >Phiên bản API: <span class="fw-bold"><?=$api_ver?></span></p>
                 <p >Bản ghi SRV: <span class="fw-bold"><?=$srv?></span></p>
